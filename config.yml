@@ -14,9 +14,9 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  # - name: DucklingHTTPExtractor
-  #   dimensions: ["number", "amount-of-money"]
-  #   url: http://localhost:8000
+  - name: DucklingHTTPExtractor
+    dimensions: ["number", "amount-of-money"]
+    url: http://duckling:8000
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
