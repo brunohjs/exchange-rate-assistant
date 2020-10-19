@@ -5,6 +5,7 @@ services:
         container_name: chatbot-rasa
         ports:
             - 5005:5005
+            - 443:443
         networks: 
             - production-network
         command: run
