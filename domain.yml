@@ -1,0 +1,34 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- start
+- greet
+- menu
+- explanation
+- help
+- exchange_rate
+- show_conversion
+- currency_list
+- conversion
+- farewell
+- out_of_scope
+- currency
+- affirm
+- negate
+entities:
+- currency
+- salutation
+- amount-of-money
+- number
+actions:
+- action_greet
+- action_menu
+- action_explanation
+- action_help
+- action_exchange_rate
+- action_show_conversion
+- action_conversion
+- action_currency_list
+- action_farewell
+- action_default_fallback
