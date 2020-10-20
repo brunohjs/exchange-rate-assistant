@@ -1,4 +1,5 @@
 from datetime import datetime
+from pytz import timezone
 from helpers.constants import currencies
 from services.exchangeRateService import getAllExchangeRates
 
@@ -23,8 +24,8 @@ def showCurrencyPrice():
     if result['statusCode'] == 200:
         time = ''
         for item in result['data'].items():
-            new_time = datetime.strptime(item[1]['time'], '%Y-%m-%d %H:%M:%S')
-            last_update = int((datetime.now() - new_time).total_seconds() / 60)
+            new_time = datetime.strptime(item[1]['time'], '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone('America/Sao_Paulo'))
+            last_update = int((datetime.now(timezone('America/Sao_Paulo')) - new_time).total_seconds() / 60)
             if not time:
                 time = new_time
             if time < new_time:
@@ -107,7 +108,7 @@ def formatMoney(value):
         return '{},00'.format(intValue)
 
 def log(message):
-    date = datetime.now().replace(microsecond=0).isoformat()
+    date = datetime.now(timezone('America/Sao_Paulo')).replace(microsecond=0).isoformat()
     print('[{}][{}]{} > {}'.format(
         date,
         (message['intent']['name'], '%.2f' % (message['intent']['confidence'])),
