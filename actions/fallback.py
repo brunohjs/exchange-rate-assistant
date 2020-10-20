@@ -10,6 +10,7 @@ class ActionDefaultFallback(Action):
         utils.log(tracker.latest_message)
         last_event = tracker.get_last_event_for('user', skip=1)
         last_confidence = last_event['parse_data']['intent']['confidence'] if last_event else None
+        last_intent = last_event['parse_data']['intent']['name']
         dispatcher.utter_message(
             text=random.choice([
                 "Desculpe, mas não entendi sua frase.",
@@ -17,7 +18,7 @@ class ActionDefaultFallback(Action):
                 "Desculpe, mas não consegui entender."
             ])
         )
-        if last_confidence and last_confidence < 0.8:
+        if (last_confidence and last_confidence < 0.8) or last_intent == 'out_of_scope':
             dispatcher.utter_message(
                 text="Aqui estão algumas sugestões:",
                 buttons=[
