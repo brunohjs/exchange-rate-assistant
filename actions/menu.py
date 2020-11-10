@@ -16,6 +16,7 @@ class ActionMenu(Action):
                 {"title": "Lista de moedas", "payload": "/currency_list"},
                 {"title": "Sobre mim", "payload": "/explanation"},
                 {"title": "Sair", "payload": "/farewell"}
-            ]
+            ],
+            button_type="reply"
         )
         return []
