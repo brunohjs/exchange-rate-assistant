@@ -28,6 +28,7 @@ nlu:
     - voltar ao menu
     - voltar
     - queria ver o menu
+    - quero ir para o menu
     - vai para o menu
     - quero acessar o menu
     - quero converter moedas
@@ -36,6 +37,7 @@ nlu:
 - intent: explanation
   examples: |
     - o que você faz?
+    - sobre mim
     - qual o seu objetivo?
     - qual a sua finalidade?
     - quem é você?
@@ -47,6 +49,7 @@ nlu:
 - intent: currency_list
   examples: |
     - ver moedas
+    - moedas
     - quais moedas você converte?
     - quais são as moedas que você utiliza na conversão?
     - com quais moedas posso converter?
@@ -75,6 +78,7 @@ nlu:
     - [R$](currency) > [€](currency)
 - intent: exchange_rate
   examples: |
+    - Me fale sobre a cotação
     - como está a cotação do [dolar](currency)
     - quero saber da cotação
     - quero saber a cotação do [dolar](currency)
@@ -125,7 +129,7 @@ nlu:
     - 21356134512.235
     - 24.324.678,00
     - 12.500,00
-    - [mil duzentos reais com quarenta e cinco centavos]{"entity": "amount-of-money", "value": "1200.45"}
+    - mil duzentos reais com quarenta e cinco centavos
     - -90,00 e 12
     - quarenta e seis [reais](currency)
     - 4 000,90
@@ -137,7 +141,6 @@ nlu:
     - bem, pode me ajudar?
     - poderia me ajudar
     - preciso de uma força
-    - por favor, poderia me ajudar?
     - gostaria de uma ajuda
     - help-me please
     - quero ajuda
@@ -161,9 +164,11 @@ nlu:
     - saindo
     - até nunca mais
     - estou indo embora
+    - to indo nessa
 - intent: out_of_scope
   examples: |
     - teste
+    - previsão do tempo
     - quero comprar uma xícara
     - comprar 1000 bike
     - comprar um xis
@@ -171,7 +176,6 @@ nlu:
     - testar sua inteligência
     - converte uma bike pra mim
     - cotação da bike
-    - ta mas eai?
     - não tem nada haver
 - intent: affirm
   examples: |
@@ -203,6 +207,3 @@ nlu:
 - synonym: night
   examples: |
     - boa noite
-- synonym: '1200.45'
-  examples: |
-    - mil duzentos reais com quarenta e cinco centavos

@@ -1,6 +1,9 @@
 language: pt
 pipeline:
-- name: WhitespaceTokenizer
+- name: SpacyNLP
+  model: pt_core_news_lg
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
 - name: RegexFeaturizer
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
@@ -18,7 +21,7 @@ pipeline:
   - amount-of-money
   url: http://localhost:8000
 - name: FallbackClassifier
-  threshold: 0.8
+  threshold: 0.5
 
 policies:
 - name: MemoizationPolicy
