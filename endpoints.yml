@@ -27,14 +27,22 @@ action_endpoint:
 
 # tracker_store:
 #     type: mongod
-#     url: mongodb://localhost:27017
-#     db: exchange-rate
+#     url: mongodb://uxl5mq7sz9vjmvrhlpe8:yPGQWlOMypGsTveW2TtA@bll2gsf0xwd15kn-mongodb.services.clever-cloud.com:27017/bll2gsf0xwd15kn
+#     db: bll2gsf0xwd15kn
+#     username: uxl5mq7sz9vjmvrhlpe8
+#     password: yPGQWlOMypGsTveW2TtA
+
+# tracker_store:
+#   type: MongoTrackerStore.MongoTrackerStore
+#   url: mongodb://uxl5mq7sz9vjmvrhlpe8:yPGQWlOMypGsTveW2TtA@bll2gsf0xwd15kn-mongodb.services.clever-cloud.com:27017/bll2gsf0xwd15kn
 
 # Event broker which all conversation events should be streamed to.
 # https://rasa.com/docs/rasa/api/event-brokers/
 
-#event_broker:
-#  url: localhost
-#  username: username
-#  password: password
-#  queue: queue
+# event_broker:
+#   type: pika
+#   url: localhost
+#   username: admin
+#   password: admin
+#   queues:
+#     - chatbase
