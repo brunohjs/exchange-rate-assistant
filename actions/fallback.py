@@ -10,7 +10,7 @@ class ActionDefaultFallback(Action):
         utils.log(tracker.latest_message)
         last_event = tracker.get_last_event_for('user', skip=1)
         last_confidence = last_event['parse_data']['intent']['confidence'] if last_event else None
-        last_intent = last_event['parse_data']['intent']['name']
+        last_intent = last_event['parse_data']['intent']['name'] if last_event else None
         dispatcher.utter_message(
             text=random.choice([
                 "Desculpe, mas não entendi sua frase.",
@@ -27,7 +27,8 @@ class ActionDefaultFallback(Action):
                     {"title": "Lista de moedas", "payload": "/currency_list"},
                     {"title": "Sobre mim", "payload": "/explanation"},
                     {"title": "Sair", "payload": "/farewell"}
-                ]
+                ],
+                button_type="reply"
             )
         else:
             dispatcher.utter_message(
